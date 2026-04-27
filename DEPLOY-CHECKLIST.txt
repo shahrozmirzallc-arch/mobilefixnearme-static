@@ -1,0 +1,41 @@
+🚀 NETLIFY DEPLOYMENT - QUICK CHECKLIST
+==========================================
+
+📂 FOLDER TO UPLOAD: C:\Users\Sharoz\mobilefixnearme-website
+
+✅ STEPS:
+
+1. [ ] Open browser → https://app.netlify.com
+2. [ ] Login to Netlify account
+3. [ ] Find "mobilefixnearme" site
+4. [ ] Click "Deploys" tab
+5. [ ] Drag entire folder OR click "Deploy manually"
+6. [ ] Wait 30-60 seconds
+7. [ ] Visit www.mobilefixnearme.ca
+8. [ ] Test on mobile phone
+9. [ ] Test WhatsApp booking button
+10. [ ] Click through all blog posts
+
+✅ FILES INCLUDED:
+- index.html (main website - UPDATED)
+- styles.css (responsive design)
+- script.js (functionality)
+- netlify.toml (config)
+- blog/ folder with 7 SEO articles
+
+🎯 NEW FEATURES:
+✅ FREE Diagnostics offer
+✅ 1000+ Repairs social proof
+✅ Lifetime Warranty
+✅ 7 SEO blog posts
+✅ Student discount
+✅ Better mobile responsiveness
+✅ MacBook image fixed
+
+📱 AFTER GOING LIVE:
+- Share on social media
+- Submit to Google Search Console
+- Setup Google Analytics
+- Start promoting blog posts
+
+🎉 READY TO GO LIVE!
