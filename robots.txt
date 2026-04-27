@@ -1,0 +1,57 @@
+# Mobile Fix Near Me - Robots.txt
+# Professional Device Repair Service - Eastern Ontario
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mobilefixnearme.ca/sitemap.xml
+
+# Crawl delay (optional - be nice to servers)
+Crawl-delay: 1
+
+# Block access to admin/private areas (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all blog posts for SEO
+Allow: /blog/
+
+# Allow images for Google Images
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+
+# Block common bot traps (security)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /.git/
+
+# Specific user agents
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots (security)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

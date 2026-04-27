@@ -1,0 +1,51 @@
+# MAXIMUM SECURITY HEADERS FOR NETLIFY
+# Prevents hacking, XSS attacks, clickjacking, and more
+
+# Apply to all pages
+/*
+  # Strict Transport Security (HSTS) - Force HTTPS
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  
+  # Content Security Policy - Prevent XSS attacks
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com https://cdn.unsplash.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  
+  # X-Frame-Options - Prevent clickjacking
+  X-Frame-Options: DENY
+  
+  # X-Content-Type-Options - Prevent MIME sniffing
+  X-Content-Type-Options: nosniff
+  
+  # X-XSS-Protection - Enable browser XSS protection
+  X-XSS-Protection: 1; mode=block
+  
+  # Referrer Policy - Control referrer information
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Permissions Policy - Disable unnecessary browser features
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+  
+  # Cache Control - Optimize performance
+  Cache-Control: public, max-age=31536000, immutable
+  
+  # Remove server info (security through obscurity)
+  X-Powered-By: ''
+  Server: '' 
+
+# HTML files - shorter cache
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Blog posts - medium cache
+/blog/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# Static assets - long cache
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS and JS - long cache (if you add them)
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,12 +1,49 @@
-# Netlify Configuration
+# Netlify Configuration - Maximum Security & Performance
+
 [build]
   publish = "."
-  command = "echo 'No build needed - static site'"
+  command = "echo 'No build required - static site'"
 
+# Security Headers (backup - also in _headers file)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    
+    # Performance
+    Cache-Control = "public, max-age=3600"
+
+# Force HTTPS redirects
+[[redirects]]
+  from = "http://mobilefixnearme.ca/*"
+  to = "https://mobilefixnearme.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.mobilefixnearme.ca/*"
+  to = "https://mobilefixnearme.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.mobilefixnearme.ca/*"
+  to = "https://mobilefixnearme.ca/:splat"
+  status = 301
+  force = true
+
+# 404 redirect to homepage (optional)
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
+  status = 404
 
-[build.environment]
-  NODE_VERSION = "18"
+# DDoS Protection & Rate Limiting (Netlify Enterprise feature)
+[context.production.environment]
+  NODE_ENV = "production"
