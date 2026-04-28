@@ -3,7 +3,10 @@
 Professional mobile and laptop repair services in Eastern Ontario.
 
 ## 🌐 Live Website
-**https://www.mobilefixnearme.ca**
+**[https://www.mobilefixnearme.ca](https://www.mobilefixnearme.ca)** - Professional Mobile & Laptop Repair Services
+
+[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fwww.mobilefixnearme.ca)](https://www.mobilefixnearme.ca)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR-BADGE-ID/deploy-status)](https://app.netlify.com/sites/mobilefixnearme/deploys)
 
 ## 📋 Features
 
@@ -81,21 +84,31 @@ git push origin main
    git push origin main
    ```
 
-## 📱 Contact
+## 📱 Contact & Links
 
-- **Website:** www.mobilefixnearme.ca
-- **Service Area:** Eastern Ontario (Ottawa, Kingston, Cornwall, Brockville)
-- **WhatsApp:** Direct booking available
+- **🌐 Website:** [www.mobilefixnearme.ca](https://www.mobilefixnearme.ca)
+- **📍 Service Area:** Eastern Ontario (Ottawa, Kingston, Cornwall, Brockville)
+- **💬 WhatsApp:** Direct booking available on website
+- **📱 Business:** Mobile & Laptop Repair Specialists
+- **🚗 Mobile Service:** We come to you!
 
-## 🎯 SEO Keywords
+## 🎯 SEO & Marketing
 
+**Target Keywords:**
 - Mobile repair near me
-- iPhone repair Eastern Ontario
+- iPhone repair Eastern Ontario  
 - MacBook repair Ottawa
 - Screen replacement Kingston
 - Water damage phone repair
 - Laptop repair Cornwall
 - We come to you repair service
+
+**Marketing Channels:**
+- 🔍 Google Search Console (verified)
+- 📊 Google Analytics (tracking active)
+- 📱 Social Media Integration
+- 💬 WhatsApp Business Booking
+- 📝 SEO-Optimized Blog Content
 
 ## 📄 License
 
