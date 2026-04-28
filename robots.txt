@@ -1,5 +1,6 @@
 # Mobile Fix Near Me - Robots.txt
 # Professional Device Repair Service - Eastern Ontario
+# Last updated: 2024
 
 # Allow all search engines to crawl everything
 User-agent: *
