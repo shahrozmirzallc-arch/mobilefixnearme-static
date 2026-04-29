@@ -1040,6 +1040,81 @@
             text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
         }
 
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 25px rgba(0, 102, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 102, 255, 0.05);
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.25em;
+            font-weight: 600;
+            color: var(--dark);
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 2em;
+            font-weight: 300;
+            color: var(--primary);
+            margin-left: 20px;
+            transition: transform 0.3s;
+            line-height: 1;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 30px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px 30px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05em;
+        }
+
         /* Contact CTA */
         .contact-cta {
             background: linear-gradient(135deg, var(--primary), var(--secondary)),
@@ -1307,7 +1382,7 @@
             </p>
             <div class="blog-grid">
                 <div class="blog-card" onclick="location.href='blog/cracked-iphone-screen.html'">
-                    <img src="https://res.cloudinary.com/ddbfcnajs/image/upload/v1777421020/mobilefixnearme/blog/mobile-phone-repair-service.jpg" alt="Cracked iPhone Screen Repair - Professional iPhone screen replacement service" class="blog-image" loading="lazy">
+                    <img src="https://res.cloudinary.com/ddbfcnajs/image/upload/v1777421020/mobilefixnearme/blog/mobile-phone-repair-service.jpg" alt="Cracked iPhone Screen Repair - Professional iPhone screen replacement service Eastern Ontario" class="blog-image" loading="lazy" width="800" height="600">
                     <div class="blog-content">
                         <h3 class="blog-title">How to Fix a Cracked iPhone Screen</h3>
                         <p class="blog-excerpt">Cracked your iPhone screen? Learn what to do immediately and why professional repair is crucial...</p>
@@ -1315,7 +1390,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="location.href='blog/water-damaged-phone.html'">
-                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&q=80" alt="Water Damaged Phone Repair - Emergency water damage recovery service" class="blog-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&q=80" alt="Water Damaged Phone Repair - Emergency water damage recovery service mobile repair" class="blog-image" loading="lazy" width="800" height="600">
                     <div class="blog-content">
                         <h3 class="blog-title">Water Damaged Phone? Here's What to Do</h3>
                         <p class="blog-excerpt">Dropped your phone in water? Act fast! Learn the critical first steps and why expert help is essential...</p>
@@ -1323,7 +1398,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="location.href='blog/macbook-wont-turn-on.html'">
-                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80" alt="MacBook Won't Turn On Repair - Professional MacBook troubleshooting and repair" class="blog-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80" alt="MacBook Won't Turn On Repair - Professional MacBook troubleshooting repair service" class="blog-image" loading="lazy" width="800" height="600">
                     <div class="blog-content">
                         <h3 class="blog-title">MacBook Won't Turn On - Troubleshooting Guide</h3>
                         <p class="blog-excerpt">MacBook refusing to power up? Learn quick fixes and when to call a professional technician...</p>
@@ -1331,7 +1406,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="location.href='blog/samsung-screen-repair.html'">
-                    <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&q=80" alt="Samsung Screen Repair - DIY vs Professional Samsung Galaxy screen replacement" class="blog-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&q=80" alt="Samsung Screen Repair - DIY vs Professional Samsung Galaxy screen replacement guide" class="blog-image" loading="lazy" width="800" height="600">
                     <div class="blog-content">
                         <h3 class="blog-title">Samsung Screen Repair: DIY vs Professional</h3>
                         <p class="blog-excerpt">Thinking about fixing your Samsung screen yourself? Learn why professional repair saves money and time...</p>
@@ -1339,7 +1414,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="location.href='blog/laptop-running-slow.html'">
-                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80" alt="Slow Laptop Repair - Speed up slow laptop professional optimization service" class="blog-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80" alt="Slow Laptop Repair - Speed up slow laptop professional optimization service Eastern Ontario" class="blog-image" loading="lazy" width="800" height="600">
                     <div class="blog-content">
                         <h3 class="blog-title">Laptop Running Slow? Quick Fixes</h3>
                         <p class="blog-excerpt">Is your laptop sluggish? Discover quick troubleshooting tips and when professional optimization is needed...</p>
@@ -1347,7 +1422,7 @@
                     </div>
                 </div>
                 <div class="blog-card" onclick="location.href='blog/phone-battery-draining.html'">
-                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=800&q=80" alt="Phone Battery Replacement - Fast draining battery repair service" class="blog-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=800&q=80" alt="Phone Battery Replacement - Fast draining battery repair service mobile technician" class="blog-image" loading="lazy" width="800" height="600">
                     <div class="blog-content">
                         <h3 class="blog-title">Phone Battery Draining Fast - Solutions</h3>
                         <p class="blog-excerpt">Battery dying quickly? Learn common causes and why professional battery replacement is the best solution...</p>
@@ -1643,6 +1718,134 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>🚗 Do you really come to my location for repairs?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We are a fully mobile repair service. Our expert technicians come directly to your home, office, or any location across Eastern Ontario. No need to travel or wait in lines - we bring our complete repair shop to YOU! Available 24/7.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>⏱️ How fast can you arrive?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our average response time is 30 minutes! For emergency repairs, we prioritize same-day service 24/7 across Eastern Ontario including Ottawa, Kingston, Brockville, and Cornwall. Just call 343-703-6000 and we'll be on our way.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>📱 What devices do you repair?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We repair ALL brands and models! iPhones (all models), Samsung Galaxy, Google Pixel, OnePlus, iPads, tablets, MacBooks, laptops (Dell, HP, Lenovo, Asus), desktop computers, and more. If it's broken, we can fix it!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>🆓 Is diagnostics really free?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Diagnostics is 100% FREE with no obligation. We'll thoroughly assess your device, explain the exact issue, and provide an accurate quote. You only pay if you decide to proceed with the repair. No hidden fees ever!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>♾️ Do you offer warranty on repairs?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All our repairs come with a LIFETIME warranty on both parts and labor. If any issue occurs with our repair work, we'll fix it for FREE - guaranteed for as long as you own the device. We stand behind our work 100%.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>📍 What areas do you service?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We service ALL of Eastern Ontario! Major cities include Ottawa, Kingston, Brockville, Cornwall, Prescott, Smith Falls, Kemptville, Gananoque, Carleton Place, Perth, and all surrounding areas. If you're in Eastern Ontario, we'll come to you!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>⏳ How long does a typical repair take?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most repairs are completed in under 1 hour on-site! Screen replacements typically take 30-45 minutes, battery replacements 20-30 minutes, and charging port repairs about 30 minutes. Complex laptop/MacBook repairs may take longer, but we work efficiently to minimize your downtime.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>💰 What payment methods do you accept?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept cash, all major credit cards (Visa, Mastercard, Amex), debit cards, and Interac e-Transfer. Payment is due after the repair is completed and you're 100% satisfied!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>🔒 Is my data safe during repair?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We never access, copy, or modify your personal data. All repairs are performed professionally with complete respect for your privacy. However, we always recommend backing up your data before any repair as a best practice.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>🔧 Do you use genuine parts?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use high-quality parts that meet or exceed OEM specifications. For iPhones and Samsung devices, we offer both premium aftermarket and genuine parts depending on your budget. All parts are tested and come with our lifetime warranty.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>📞 Can I get same-day repair service?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Same-day service is available 24/7 for most repairs. Call us at 343-703-6000 and we'll do our best to arrive and complete your repair the same day. For complex repairs requiring special parts, we'll provide an accurate timeline.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>❓ What if my device can't be repaired?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If we determine your device is beyond economical repair, we'll tell you honestly during the FREE diagnosis. We may be able to recover your data even if the device can't be fixed. We'll never charge you for diagnostics or repairs we can't complete successfully.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact CTA -->
     <section class="contact-cta">
         <div class="container">
@@ -1730,6 +1933,22 @@
             
             this.reset();
         });
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const allFaqItems = document.querySelectorAll('.faq-item');
+            
+            // Close all other FAQs
+            allFaqItems.forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
