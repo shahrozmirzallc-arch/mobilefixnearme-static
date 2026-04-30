@@ -9,52 +9,139 @@
 <!-- Main Homepage -->
 <url>
   <loc>https://mobilefixnearme.ca/</loc>
-  <lastmod>2024-12-19</lastmod>
+  <lastmod>2025-01-07</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 
-<!-- Blog Posts - SEO Optimized -->
+<!-- Main Pages -->
+<url>
+  <loc>https://mobilefixnearme.ca/faq.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/service-areas.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Major City Pages - High Priority -->
+<url>
+  <loc>https://mobilefixnearme.ca/ottawa-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/kingston-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/cornwall-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/brockville-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/pembroke-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Secondary City Pages -->
+<url>
+  <loc>https://mobilefixnearme.ca/hawkesbury-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/carleton-place-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/smiths-falls-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/petawawa-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://mobilefixnearme.ca/rockland-phone-repair.html</loc>
+  <lastmod>2025-01-07</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Blog Posts - SEO Content -->
 <url>
   <loc>https://mobilefixnearme.ca/blog/cracked-iphone-screen.html</loc>
-  <lastmod>2024-12-19</lastmod>
+  <lastmod>2025-01-07</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <priority>0.6</priority>
 </url>
 
 <url>
   <loc>https://mobilefixnearme.ca/blog/water-damaged-phone.html</loc>
-  <lastmod>2024-12-19</lastmod>
+  <lastmod>2025-01-07</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <priority>0.6</priority>
 </url>
 
 <url>
   <loc>https://mobilefixnearme.ca/blog/macbook-wont-turn-on.html</loc>
-  <lastmod>2024-12-19</lastmod>
+  <lastmod>2025-01-07</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <priority>0.6</priority>
 </url>
 
 <url>
   <loc>https://mobilefixnearme.ca/blog/samsung-screen-repair.html</loc>
-  <lastmod>2024-12-19</lastmod>
+  <lastmod>2025-01-07</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <priority>0.6</priority>
 </url>
 
 <url>
   <loc>https://mobilefixnearme.ca/blog/laptop-running-slow.html</loc>
-  <lastmod>2024-12-19</lastmod>
+  <lastmod>2025-01-07</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <priority>0.6</priority>
 </url>
 
 <url>
   <loc>https://mobilefixnearme.ca/blog/phone-battery-draining.html</loc>
-  <lastmod>2024-12-19</lastmod>
+  <lastmod>2025-01-07</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <priority>0.6</priority>
 </url>
 
 </urlset>
