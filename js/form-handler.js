@@ -65,22 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
             // Submit to Supabase
             const result = await submitToSupabase(formData);
 
-            // Send email notification via FormSubmit
+            // Send email notification via Supabase Edge Function
             try {
-                const emailData = new FormData();
-                emailData.append('name', name);
-                emailData.append('phone', phone);
-                emailData.append('email', email || 'Not provided');
-                emailData.append('location', location);
-                emailData.append('device_type', deviceType);
-                emailData.append('issue', issue);
-                emailData.append('datetime', datetime || 'Not specified');
-                emailData.append('_subject', `🔧 NEW BOOKING: ${name} - ${location}`);
-                emailData.append('_template', 'table');
-
-                await fetch('https://formsubmit.co/shahrozmirzallc@gmail.com', {
+                await fetch(`${SUPABASE_URL}/functions/v1/send-contact-email`, {
                     method: 'POST',
-                    body: emailData
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email || 'Not provided',
+                        phone: phone,
+                        message: `Location: ${location}\nDevice: ${deviceType}\nIssue: ${issue}\nPreferred Time: ${datetime || 'Not specified'}`
+                    })
                 });
             } catch (emailError) {
                 console.error('Email notification failed:', emailError);
