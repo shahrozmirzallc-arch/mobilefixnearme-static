@@ -1,196 +1,153 @@
-// Mobile Fix Near Me - Form Handler with Supabase Integration
-// Connects booking form to Supabase database
-
 // Supabase Configuration
 const SUPABASE_URL = 'https://gbwgaumyyffzlhusadjk.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_ej1CDlPSDPfFO11aEJMtNQ_-a1LJK4y';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdid2dhdW15eWZmemxodXNhZGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY5NjQzMDcsImV4cCI6MjA1MjU0MDMwN30.hLB3t_EB-pD7Vt1jJwJNvxjrfOjqnXxP9cwFrxUXUAo';
 
 // Initialize Supabase client (using REST API)
-class SupabaseClient {
-    constructor(url, key) {
-        this.url = url;
-        this.key = key;
-    }
-
-    async insert(table, data) {
-        try {
-            const response = await fetch(`${this.url}/rest/v1/${table}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'apikey': this.key,
-                    'Authorization': `Bearer ${this.key}`,
-                    'Prefer': 'return=minimal'
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (!response.ok) {
-                const error = await response.text();
-                throw new Error(`Supabase error: ${response.status} - ${error}`);
-            }
-
-            return { success: true };
-        } catch (error) {
-            console.error('Supabase insert error:', error);
-            throw error;
-        }
-    }
-}
-
-const supabase = new SupabaseClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
-
-// Show success message with green tick animation
-function showSuccessMessage() {
-    const form = document.getElementById('bookingForm');
-    const formContainer = form.parentElement;
-    
-    // Create success message HTML
-    const successHTML = `
-        <div id="successMessage" style="text-align: center; padding: 60px 30px; animation: fadeIn 0.5s ease-in;">
-            <div style="width: 120px; height: 120px; background: #00E676; border-radius: 50%; 
-                        display: flex; align-items: center; justify-content: center; 
-                        margin: 0 auto 30px; box-shadow: 0 8px 30px rgba(0, 230, 118, 0.4);
-                        animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
-                <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation: drawCheck 0.8s ease-in-out 0.3s both;">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <h2 style="font-size: 2.5em; color: #00E676; margin-bottom: 20px; font-weight: 900;">✅ Sent!</h2>
-            <p style="font-size: 1.3em; margin-bottom: 15px; font-weight: 600;">We will get back to you in 24 hours!</p>
-            <p style="font-size: 1.1em; margin-bottom: 30px; opacity: 0.9;">Our team has received your request and will contact you shortly.</p>
-            <div style="background: rgba(255,255,255,0.2); padding: 25px; border-radius: 10px; margin-top: 30px;">
-                <p style="font-size: 1.2em; font-weight: 700; margin-bottom: 10px;">🚨 Have an Emergency?</p>
-                <p style="font-size: 1em; margin-bottom: 15px;">Need immediate assistance? Call us now:</p>
-                <a href="tel:4384623477" style="display: inline-block; background: #FFD700; color: #000; 
-                   padding: 15px 40px; border-radius: 8px; text-decoration: none; font-size: 1.5em; 
-                   font-weight: 900; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); 
-                   transition: all 0.3s; margin-top: 10px;">
-                    📞 438-462-3477
-                </a>
-                <p style="font-size: 0.95em; margin-top: 15px; opacity: 0.9;">Available 24/7 • 30-minute response time</p>
-            </div>
-            <button onclick="resetForm()" style="margin-top: 30px; background: white; color: #0066FF; 
-                    padding: 12px 30px; border: none; border-radius: 8px; font-size: 1.1em; 
-                    font-weight: 700; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                ← Back to Form
-            </button>
-        </div>
-
-        <style>
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-
-            @keyframes scaleIn {
-                0% { transform: scale(0); opacity: 0; }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); opacity: 1; }
-            }
-
-            @keyframes drawCheck {
-                0% { stroke-dasharray: 0, 100; }
-                100% { stroke-dasharray: 100, 100; }
-            }
-        </style>
-    `;
-
-    // Hide form and show success message
-    form.style.display = 'none';
-    formContainer.insertAdjacentHTML('beforeend', successHTML);
-
-    // Scroll to success message
-    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-    // Track conversion (Facebook Pixel & Google Analytics)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead');
-    }
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'generate_lead', {
-            'event_category': 'Form',
-            'event_label': 'Booking Form Submission'
-        });
-    }
-}
-
-// Reset form to show it again
-function resetForm() {
-    const form = document.getElementById('bookingForm');
-    const successMessage = document.getElementById('successMessage');
-    
-    if (successMessage) {
-        successMessage.remove();
-    }
-    
-    form.style.display = 'block';
-    form.reset();
-    
-    // Scroll to form
-    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// Handle form submission
-async function handleBookingSubmit(event) {
-    event.preventDefault();
-
-    const submitButton = event.target.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.innerHTML;
-
+async function submitToSupabase(formData) {
     try {
-        // Disable button and show loading
-        submitButton.disabled = true;
-        submitButton.innerHTML = '⏳ Sending...';
-        submitButton.style.opacity = '0.6';
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify(formData)
+        });
 
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            email: document.getElementById('email').value.trim() || null,
-            location: document.getElementById('location').value.trim(),
-            device_type: document.getElementById('bookingDevice').value,
-            issue_description: document.getElementById('issue').value.trim(),
-            preferred_datetime: document.getElementById('datetime').value || null,
-            status: 'new'
-        };
-
-        // Validate required fields
-        if (!formData.name || !formData.phone || !formData.location || !formData.device_type || !formData.issue_description) {
-            throw new Error('Please fill in all required fields');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // Submit to Supabase
-        await supabase.insert('contact_submissions', formData);
-
-        // Show success message
-        showSuccessMessage();
-
-        // Optional: Send notification email or SMS (can be added later)
-        console.log('Form submitted successfully:', formData);
-
+        return { success: true };
     } catch (error) {
-        console.error('Form submission error:', error);
-        
-        // Show error message
-        alert(`⚠️ Oops! Something went wrong.\n\nPlease call us directly at 438-462-3477 for immediate assistance.\n\nError: ${error.message}`);
-
-        // Re-enable button
-        submitButton.disabled = false;
-        submitButton.innerHTML = originalButtonText;
-        submitButton.style.opacity = '1';
+        console.error('Supabase submission error:', error);
+        return { success: false, error: error.message };
     }
 }
 
-// Initialize form handler when DOM is ready
+// Handle Booking Form Submission
 document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
     
     if (bookingForm) {
-        bookingForm.addEventListener('submit', handleBookingSubmit);
-        console.log('✅ Booking form initialized with Supabase integration');
-    } else {
-        console.error('❌ Booking form not found!');
+        bookingForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim() || null;
+            const location = document.getElementById('location').value.trim();
+            const deviceType = document.getElementById('bookingDevice').value;
+            const issue = document.getElementById('issue').value.trim();
+            const datetime = document.getElementById('datetime').value || null;
+
+            // Disable submit button
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = '📤 Submitting...';
+
+            // Prepare data for Supabase
+            const formData = {
+                name: name,
+                phone: phone,
+                email: email,
+                location: location,
+                device_type: deviceType,
+                issue_description: issue,
+                preferred_datetime: datetime,
+                status: 'new'
+            };
+
+            // Submit to Supabase
+            const result = await submitToSupabase(formData);
+
+            // Send email notification via FormSubmit
+            try {
+                const emailData = new FormData();
+                emailData.append('name', name);
+                emailData.append('phone', phone);
+                emailData.append('email', email || 'Not provided');
+                emailData.append('location', location);
+                emailData.append('device_type', deviceType);
+                emailData.append('issue', issue);
+                emailData.append('datetime', datetime || 'Not specified');
+                emailData.append('_subject', `🔧 NEW BOOKING: ${name} - ${location}`);
+                emailData.append('_template', 'table');
+
+                await fetch('https://formsubmit.co/shahrozmirzallc@gmail.com', {
+                    method: 'POST',
+                    body: emailData
+                });
+            } catch (emailError) {
+                console.error('Email notification failed:', emailError);
+            }
+
+            if (result.success) {
+                // Success message
+                alert(`✅ BOOKING REQUEST RECEIVED!\n\nThank you ${name}!\n\n✅ FREE diagnostics included\n✅ Lifetime warranty guaranteed\n✅ 30-minute response time\n\nWe'll call you at ${phone} within 15 minutes to confirm your appointment in ${location}.\n\n📞 For immediate service, call 343-703-6000`);
+                
+                // Reset form
+                this.reset();
+                
+                // Track Facebook Pixel event (if available)
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: 'Booking Form',
+                        content_category: 'Contact',
+                        value: 0.00,
+                        currency: 'CAD'
+                    });
+                }
+
+                // Track Google Analytics event (if available)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'generate_lead', {
+                        'event_category': 'Form',
+                        'event_label': 'Booking Form Submission',
+                        'value': 1
+                    });
+                }
+            } else {
+                // Error message with fallback
+                alert(`❌ OOPS! There was a technical issue submitting your booking.\n\n📞 Please call us directly at 343-703-6000\n\nWe're available 24/7 and will be happy to assist you!`);
+                
+                console.error('Submission failed:', result.error);
+            }
+
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        });
     }
 });
+
+// Optional: Test function to verify Supabase connection
+async function testSupabaseConnection() {
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_submissions?limit=1`, {
+            method: 'GET',
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+            }
+        });
+
+        if (response.ok) {
+            console.log('✅ Supabase connection successful!');
+            return true;
+        } else {
+            console.error('❌ Supabase connection failed:', response.status);
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Supabase connection error:', error);
+        return false;
+    }
+}
+
+// Run connection test on page load (optional - comment out in production)
+// testSupabaseConnection();
