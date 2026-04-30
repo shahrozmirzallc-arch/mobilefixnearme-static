@@ -4,6 +4,10 @@
   publish = "."
   command = "echo 'No build required - static site'"
 
+# Netlify Forms Plugin
+[[plugins]]
+  package = "@netlify/plugin-forms"
+
 # Security Headers (backup - also in _headers file)
 [[headers]]
   for = "/*"

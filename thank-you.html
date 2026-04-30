@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - Mobile Fix Near Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066FF;
+            --secondary: #00D4FF;
+            --dark: #0A0E27;
+            --accent: #FFD700;
+            --light: #F5F7FA;
+            --success: #00E676;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .checkmark {
+            width: 100px;
+            height: 100px;
+            background: var(--success);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            animation: scaleIn 0.5s ease-out 0.2s backwards;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background: rgba(0, 102, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary);
+        }
+
+        .highlight p {
+            font-weight: 600;
+            color: var(--primary);
+            margin: 5px 0;
+        }
+
+        .phone-number {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: var(--accent);
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            margin: 10px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-secondary:hover {
+            background: #FFC700;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.05em;
+            }
+
+            .phone-number {
+                font-size: 1.8em;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="checkmark">✓</div>
+        <h1>Thank You!</h1>
+        <p>Your booking request has been received successfully!</p>
+        
+        <div class="highlight">
+            <p>✅ FREE diagnostics included</p>
+            <p>✅ Lifetime warranty on all repairs</p>
+            <p>✅ 30-minute response time</p>
+            <p>✅ We come to YOUR location</p>
+        </div>
+
+        <p style="font-size: 1.3em; font-weight: 600; margin: 25px 0;">
+            We'll call you within 15 minutes to confirm your appointment!
+        </p>
+
+        <p>For immediate service, call us now:</p>
+        <div class="phone-number">📞 343-703-6000</div>
+
+        <div style="margin-top: 40px;">
+            <a href="tel:3437036000" class="btn btn-secondary">Call Now</a>
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 0.95em; opacity: 0.7;">
+            Open 24/7 | Same-Day Service Available
+        </p>
+    </div>
+</body>
+</html>
